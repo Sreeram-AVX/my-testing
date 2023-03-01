@@ -18,16 +18,6 @@ vpc_config = [
     aviatrix_transit_vpc = false
     aviatrix_firenet_vpc = false
   }
-   ,
-  {
-    type                 = 1
-    acc-name             = "Sree-AWS"
-    reg                  = "ap-northeast-1"
-    vpc-name             = "spoke-3-vpc"
-    cidr_bl              = "10.100.3.0/24"
-    aviatrix_transit_vpc = false
-    aviatrix_firenet_vpc = false
-  }
 ]
 gw_config = [ 
   {
@@ -40,7 +30,9 @@ gw_config = [
   subnet            = "10.100.1.48/28"
   single_ip_snat    = false
   manage_ha_gateway = false
-  tags         = {  }
+  tags         = { 
+  name = "tf-spoke-gateway1-aws"
+    }
 } 
 ,
 {
@@ -53,7 +45,9 @@ gw_config = [
   subnet            = "10.100.2.48/28"
   single_ip_snat    = false
   manage_ha_gateway = false
-    tags         = { }
+    tags         = {
+    name = "tf-spoke-gateway2-aws" 
+    }
 }
 ]
 
