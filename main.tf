@@ -16,7 +16,7 @@ resource "aviatrix_spoke_gateway" "tf-spoke-gateway" {
   cloud_type        = var.gw_config[count.index]["cloud_type"]
   account_name      = var.gw_config[count.index]["account_name"]
   gw_name           = var.gw_config[count.index]["gw_name"]
-  vpc_id            = var.gw_config[count.index]["vpc_id"]
+  vpc_id            = aviatrix_vpc.spoke-transit-vpcs[count.index].vpc_id
   vpc_reg           = var.gw_config[count.index]["vpc_reg"]
   gw_size           = var.gw_config[count.index]["gw_size"]
   subnet            = var.gw_config[count.index]["subnet"]
