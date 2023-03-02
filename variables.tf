@@ -4,6 +4,4 @@ variable vpc_config{
 variable gw_config{
   type= any
 }
-variable gw_tags{
-  type= list(map(any))
-}
+
