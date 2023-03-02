@@ -23,6 +23,9 @@ resource "aviatrix_spoke_gateway" "tf-spoke-gateway" {
   single_ip_snat    = var.gw_config[count.index]["single_ip_snat"]
   manage_ha_gateway = var.gw_config[count.index]["manage_ha_gateway"]
   tags              = var.gw_config[count.index]["tags"] 
+  depends_on = [
+    aviatrix_vpc.spoke-transit-vpcs
+  ]
   
 }
 
