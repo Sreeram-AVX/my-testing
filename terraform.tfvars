@@ -51,12 +51,3 @@ gw_config = [
 }
 ]
 
-gw_tags =[
-  {
-    name = "tf-spoke-gateway1-aws"
-  }
-  ,
-  {
-    name = "tf-spoke-gateway1-aws"
-  }
-]
