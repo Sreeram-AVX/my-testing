@@ -28,7 +28,7 @@ resource "aviatrix_spoke_gateway" "tf-spoke-gateway" {
   ] 
 }
 
-rt_num = aviatrix_vpc.spoke-transit-vpcs[0].route_tables
+#rt_num = aviatrix_vpc.spoke-transit-vpcs[0].route_tables
 
 resource "aws_vpn_gateway_route_propagation" "customer-vpc" {
   count = length(routetable-numbers.value)
