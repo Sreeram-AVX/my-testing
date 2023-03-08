@@ -28,10 +28,10 @@ resource "aviatrix_spoke_gateway" "tf-spoke-gateway" {
   ] 
 }
 
-rt_num = length(aviatrix_vpc.spoke-transit-vpcs[0].route_tables)
+rt_num = aviatrix_vpc.spoke-transit-vpcs[0].route_tables
 
 resource "aws_vpn_gateway_route_propagation" "customer-vpc" {
-  count = rt_num
+  count = length(rt_num)
   vpn_gateway_id = aws_vpn_gateway.vpn_gateway.id
   route_table_id = aviatrix_vpc.spoke-vpcs[0].route_tables[count.index]
     depends_on = [
