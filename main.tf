@@ -36,7 +36,7 @@ resource "aws_vpn_gateway" "vpn_gateway" {
 }
 
 data "aws_route_tables" "rts" {
-  vpc_id = aviatrix_vpc.spoke-transit-vpcs[count.index].vpc_id
+  vpc_id = aviatrix_vpc.spoke-transit-vpcs[0].vpc_id
 }
 
 resource "aws_vpn_gateway_route_propagation" "customer-vpc" {
