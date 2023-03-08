@@ -5,6 +5,6 @@ variable gw_config{
   type= any
 }
 variable rt_num{
-  type= number
+  type= list
 }
 
