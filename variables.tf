@@ -4,7 +4,3 @@ variable vpc_config{
 variable gw_config{
   type= any
 }
-variable rt_num{
-  type= list
-}
-
