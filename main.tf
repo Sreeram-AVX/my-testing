@@ -43,7 +43,7 @@ resource "aws_vpn_gateway_route_propagation" "customer-vpc" {
    depends_on = [
     aviatrix_vpc.spoke-transit-vpcs,aws_vpn_gateway.vpn_gateway
   ]
-  count = length(data.aws_route_tables.rts.ids))
+  count = length(data.aws_route_tables.rts.ids)
   vpn_gateway_id = aws_vpn_gateway.vpn_gateway.id
   route_table_id = aviatrix_vpc.spoke-transit-vpcs[0].route_tables[count.index]
 }
