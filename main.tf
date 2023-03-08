@@ -28,7 +28,7 @@ resource "aviatrix_spoke_gateway" "tf-spoke-gateway" {
   ] 
 }
 resource "aws_vpn_gateway" "vpn_gateway" {
-  vpc_id = aviatrix_vpc.spoke-vpcs[0].vpc_id
+  vpc_id = aviatrix_vpc.spoke-transit-vpcs[0].vpc_id
   depends_on = [
    aviatrix_vpc.spoke-transit-vpcs
   ] 
